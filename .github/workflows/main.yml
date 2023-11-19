@@ -1,66 +1,41 @@
+
 name: Build and Deploy
-on: 
+on:
   push:
     branches:
       - main
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Repo
-      uses: actions/checkout@v2
-
-    - name: Install Dependencies
-      run: npm install
-
-    - name: Build
-      run: npm run build
-
-    - name: Deploy to Firebase
-      uses: w9jds/firebase-action@master
-      with:
-        args: deploy --only hosting
-      env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-
-
-# name: Build and Deploy
-# on:
-#   push:
-#     branches:
-#       - main
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout Repo
-#         uses: actions/checkout@v2
-#       - name: Install Dependencies
-#         run: npm install
-#       - name: Build
-#         run: npm run build
-#       - name: Archive Production Artifact
-#         uses: actions/upload-artifact@v2
-#         with:
-#           name: dist
-#           path: dist
-#   deploy:
-#     needs: build
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout Repo
-#         uses: actions/checkout@v2
-#       - name: Download Artifact
-#         uses: actions/download-artifact@v2
-#         with:
-#           name: dist
-#       - name: Install Firebase Tools
-#         run: npm install -g firebase-tools
-#       - name: Enable Firebase Experiments
-#         run: firebase experiments:enable webframeworks
-#         env:
-#           FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANDERSON_NEW_WEB }}
-#       - name: Deploy to Firebase
-#         run: firebase deploy --only hosting
-#         env:
-#           FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANDERSON_NEW_WEB }}
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Archive Production Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Download Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: dist
+      - name: Install Firebase Tools
+        run: npm install -g firebase-tools
+      - name: Enable Firebase Experiments
+        run: firebase experiments:enable webframeworks
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANDERSON_NEW_WEB }}
+      - name: Deploy to Firebase
+        run: firebase deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANDERSON_NEW_WEB }}
