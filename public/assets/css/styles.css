@@ -1090,6 +1090,10 @@ body {
   #footer .copyright {
     text-align: center;
   }
+
+  #footer .logo-dev {
+    text-align: center;
+  }
   
   #footer .credits {
     padding-top: 5px;

@@ -28,6 +28,7 @@ export const Header = () => {
             <strong className="text-light d-flex justify-content-center w-100">
               <span>SSR Web Developer</span>
             </strong>
+
             <div className="social-links mt-3 text-center">
               <a href="#" className="facebook mx-1 hvr-pop">
                 <i className="bx bxl-facebook"></i>
