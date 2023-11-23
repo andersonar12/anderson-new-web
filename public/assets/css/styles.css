@@ -1093,6 +1093,7 @@ body {
 
   #footer .logo-dev {
     text-align: center;
+    width: 120px;
   }
   
   #footer .credits {
