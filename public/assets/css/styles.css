@@ -248,17 +248,8 @@ body {
     height: 100vh;
     background: url("../img/hero-bg.jpg") top center;
     background-size: cover;
-  }
-  
-  #hero:before {
-    content: "";
-    background: rgb(5 13 24 / 50%);;
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
+    background-color: rgb(5 13 24 / 50%);
+    background-blend-mode: multiply;
   }
   
   #hero .hero-container {
@@ -302,7 +293,6 @@ body {
     }
   
     #hero h2 {
-      font-size: 18px;
       line-height: 24px;
       margin-bottom: 30px;
     }
@@ -325,7 +315,7 @@ body {
   }
   
   .section-title h2 {
-    font-size: 32px;
+    font-size: 42px;
     font-weight: bold;
     margin-bottom: 20px;
     padding-bottom: 20px;
@@ -370,13 +360,6 @@ body {
   
   .about .content ul strong {
     margin-right: 10px;
-  }
-  
-  .about .content ul i {
-    font-size: 16px;
-    margin-right: 5px;
-    color: #149ddd;
-    line-height: 0;
   }
   
   .about .content p:last-child {
@@ -1110,3 +1093,4 @@ body {
       padding-right: 20px 15px;
     }
   } */
+

@@ -1,10 +1,26 @@
 import { useEffect } from "react";
+
 import Typed from "typed.js";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+
+import { skills, itemsAbout } from "../data/data";
 
 let typeInited = null as Typed | null;
 
 export function Home() {
   useEffect(() => {
+    //AOS Animation
+    AOS.init({
+      startEvent: "DOMContentLoaded", // name of the event dispatched on the document, that AOS should initialize on
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false,
+    });
+
     const initTyped = () => {
       const element = document.querySelector(".typed");
       if (element) {
@@ -26,6 +42,7 @@ export function Home() {
     //   typeInited!.destroy();
     // };
   }, []);
+
   const toggleMenu = () => {
     let body = document.querySelector("body");
     if (body!.classList.contains("mobile-nav-active")) {
@@ -35,6 +52,7 @@ export function Home() {
       navbarToggle!.classList.toggle("bi-x");
     }
   };
+
   return (
     <div id="home" onClick={() => toggleMenu()}>
       <section id="hero" className="d-flex flex-column justify-content-center align-items-center">
@@ -54,74 +72,45 @@ export function Home() {
             <div className="section-title">
               <h2>About</h2>
               <p>
-                Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum
-                quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui
-                impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.
+                I have a deep passion for UI/UX design, and I am committed to developing innovative
+                experiences 🦾 that delight customers and exceed their expectations. 🤝🏻 As a
+                Systems Engineer and Web Developer ⚙️💻. Many years of experience working with a
+                wide range of technologies
               </p>
             </div>
 
             <div className="row">
-              <div className="col-lg-4 aos-init aos-animate" data-aos="fade-right">
+              <div className="col-lg-4 aos-init" data-aos="fade-right">
                 <img src="assets/img/anderson-profile.png" className="img-fluid" alt="" />
               </div>
-              <div
-                className="col-lg-8 pt-4 pt-lg-0 content aos-init aos-animate"
-                data-aos="fade-left"
-              >
-                <h3>UI/UX Designer &amp; Web Developer.</h3>
-                <p className="fst-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua.
-                </p>
+              <div className="col-lg-8 pt-4 pt-lg-0 content aos-init" data-aos="fade-left">
+                <h3>Systems Engineer &amp; Web Developer </h3>
+                <p className="fst-italic">Basic personal information:</p>
+
                 <div className="row">
-                  <div className="col-lg-6">
+                  <div className="col">
                     <ul>
-                      <li>
-                        <i className="bi bi-chevron-right"></i> <strong>Birthday:</strong>{" "}
-                        <span>1 May 1995</span>
-                      </li>
-                      <li>
-                        <i className="bi bi-chevron-right"></i> <strong>Website:</strong>{" "}
-                        <span>www.example.com</span>
-                      </li>
-                      <li>
-                        <i className="bi bi-chevron-right"></i> <strong>Phone:</strong>{" "}
-                        <span>+123 456 7890</span>
-                      </li>
-                      <li>
-                        <i className="bi bi-chevron-right"></i> <strong>City:</strong>{" "}
-                        <span>New York, USA</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="col-lg-6">
-                    <ul>
-                      <li>
-                        <i className="bi bi-chevron-right"></i> <strong>Age:</strong>{" "}
-                        <span>30</span>
-                      </li>
-                      <li>
-                        <i className="bi bi-chevron-right"></i> <strong>Degree:</strong>{" "}
-                        <span>Master</span>
-                      </li>
-                      <li>
-                        <i className="bi bi-chevron-right"></i> <strong>PhEmailone:</strong>{" "}
-                        <span>email@example.com</span>
-                      </li>
-                      <li>
-                        <i className="bi bi-chevron-right"></i> <strong>Freelance:</strong>{" "}
-                        <span>Available</span>
-                      </li>
+                      {itemsAbout.map((item, index) => (
+                        <li key={index}>
+                          <FontAwesomeIcon
+                            icon={faChevronRight}
+                            className="me-2"
+                            style={{ color: "#149ddd" }}
+                          />
+                          <strong>{item.title}:</strong>
+                          <span>{item.value}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
                 <p>
-                  Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam
-                  sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et
-                  eius omnis. Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur
-                  qui quia repellendus itaque neque. Aliquid amet quidem ut quaerat cupiditate. Ab
-                  et eum qui repellendus omnis culpa magni laudantium dolores.
+                  My specialty and area of expertise is Front End development, always with the
+                  enthusiasm to learn and master the best technologies available. I am constantly
+                  dedicated to developing best practices in programming syntax, acquiring new skills
+                  and knowledge in the process.
                 </p>
+                <p className="fst-italic">"Living, learning, & leveling up one day at a time".</p>
               </div>
             </div>
           </div>
@@ -134,15 +123,17 @@ export function Home() {
             <div className="section-title">
               <h2>Facts</h2>
               <p>
-                Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum
-                quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui
-                impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.
+                Over the years, I have had the pleasure of working with clients who have been
+                satisfied with the service. This reflects the quality of the projects that have been
+                successfully completed. Each project has been an opportunity to learn, grow and
+                improve. I am proud of the results I have achieved and how this has contributed to
+                client satisfaction.
               </p>
             </div>
 
             <div className="row no-gutters">
               <div
-                className="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
+                className="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init"
                 data-aos="fade-up"
               >
                 <div className="count-box">
@@ -162,7 +153,7 @@ export function Home() {
               </div>
 
               <div
-                className="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
+                className="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
@@ -183,7 +174,7 @@ export function Home() {
               </div>
 
               <div
-                className="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
+                className="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init"
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
@@ -204,7 +195,7 @@ export function Home() {
               </div>
 
               <div
-                className="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init aos-animate"
+                className="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init"
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
@@ -227,6 +218,35 @@ export function Home() {
           </div>
         </section>
         {/* <!-- End Facts Section --> */}
+
+        {/* <!-- ======= Skills Section ======= --> */}
+
+        <section id="skills" className="skills section-bg">
+          <div className="container">
+            <div className="section-title">
+              <h2>Skills</h2>
+            </div>
+
+            <div className="container mb-4 aos-init" data-aos="fade-up">
+              <div className="row">
+                {skills.map((skill, index) => (
+                  <div
+                    key={index}
+                    className="col-4 col-md-3 col-lg-1 aos-init hvr-pop"
+                    data-aos="zoom-in-left"
+                    data-aos-delay={index * 15}
+                  >
+                    <img src={skill.img} className="img-fluid" />
+                    <p className="fw-bold p-0 text-center" style={{ fontSize: "15px" }}>
+                      {skill.title}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* <!-- End Skills Section --> */}
       </main>
     </div>
   );

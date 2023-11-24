@@ -1,7 +1,74 @@
 import { Link } from "react-router-dom";
 import { Footer } from "./Footer";
+import { useEffect } from "react";
+
+const navLinks = [
+  {
+    href: "#hero",
+    className: "nav-link scrollto active hvr-shutter-out-horizontal",
+    icon: "bx bx-home",
+    text: "Home",
+  },
+  {
+    href: "#about",
+    className: "nav-link scrollto hvr-shutter-out-horizontal",
+    icon: "bx bx-user",
+    text: "About",
+  },
+  {
+    href: "#facts",
+    className: "nav-link scrollto hvr-shutter-out-horizontal",
+    icon: "bx bi-card-heading",
+    text: "Facts",
+  },
+  {
+    href: "#skills",
+    className: "nav-link scrollto hvr-shutter-out-horizontal",
+    icon: "bx bi-code-slash",
+    text: "Skills",
+  },
+  {
+    href: "#portfolio",
+    className: "nav-link scrollto hvr-shutter-out-horizontal",
+    icon: "bx bi-journal-album",
+    text: "Portfolio",
+  },
+  {
+    href: "#services",
+    className: "nav-link scrollto hvr-shutter-out-horizontal",
+    icon: "bx bx-server",
+    text: "Services",
+  },
+  {
+    href: "#contact",
+    className: "nav-link scrollto hvr-shutter-out-horizontal",
+    icon: "bx bx-envelope",
+    text: "Contact",
+  },
+];
 
 export const Header = () => {
+  useEffect(() => {
+    let navbarlinks = document.querySelectorAll(
+      "#navbar .scrollto"
+    ) as NodeListOf<HTMLAnchorElement>;
+    const navbarlinksActive = () => {
+      let position = window.scrollY + 200;
+      navbarlinks.forEach((navbarlink) => {
+        if (!navbarlink.hash) return;
+        let section = document.querySelector(navbarlink.hash) as HTMLAnchorElement;
+        if (!section) return;
+        if (position >= section.offsetTop && position <= section.offsetTop + section.offsetHeight) {
+          navbarlink.classList.add("active");
+        } else {
+          navbarlink.classList.remove("active");
+        }
+      });
+    };
+    window.addEventListener("load", navbarlinksActive);
+    document.addEventListener("scroll", navbarlinksActive);
+  }, []);
+
   const toggleMenu = () => {
     document.querySelector("body")!.classList.toggle("mobile-nav-active");
     const navToggle = document.querySelector(".mobile-nav-toggle")!;
@@ -45,41 +112,19 @@ export const Header = () => {
             </div>
           </div>
 
+          {/* <!-- ======= Navbar ======= --> */}
           <nav id="navbar" className="nav-menu navbar">
             <ul className="ps-4 pe-4 w-100">
-              <li className="">
-                <a href="#hero" className="nav-link scrollto active hvr-shutter-out-horizontal">
-                  <i className="bx bx-home"></i> <span>Home</span>
-                </a>
-              </li>
-              <li className="">
-                <a href="#about" className="nav-link scrollto hvr-shutter-out-horizontal">
-                  <i className="bx bx-user"></i> <span>About</span>
-                </a>
-              </li>
-              <li className="">
-                <a href="#resume" className="nav-link scrollto hvr-shutter-out-horizontal">
-                  <i className="bx bx-file-blank"></i> <span>Resume</span>
-                </a>
-              </li>
-              <li className="">
-                <a href="#portfolio" className="nav-link scrollto hvr-shutter-out-horizontal">
-                  <i className="bx bx-book-content"></i> <span>Portfolio</span>
-                </a>
-              </li>
-              <li className="">
-                <a href="#services" className="nav-link scrollto hvr-shutter-out-horizontal">
-                  <i className="bx bx-server"></i> <span>Services</span>
-                </a>
-              </li>
-              <li className="">
-                <a href="#contact" className="nav-link scrollto hvr-shutter-out-horizontal ">
-                  <i className="bx bx-envelope"></i> <span>Contact</span>
-                </a>
-              </li>
+              {navLinks.map((link) => (
+                <li key={link.text}>
+                  <a href={link.href} className={link.className}>
+                    <i className={link.icon}></i> <span>{link.text}</span>
+                  </a>
+                </li>
+              ))}
             </ul>
           </nav>
-          {/* <!-- .nav-menu --> */}
+          {/* <!-- ======= Navbar ======= --> */}
         </div>
         <Footer />
       </header>
