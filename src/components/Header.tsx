@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Footer } from "./Footer";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const navLinks = [
   {
