@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Footer } from "./Footer";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const navLinks = [
   {
@@ -75,6 +75,7 @@ export const Header = () => {
     navToggle.classList.toggle("bi-list");
     navToggle.classList.toggle("bi-x");
   };
+
   return (
     <>
       {/* <!-- ======= Mobile nav toggle button ======= --> */}

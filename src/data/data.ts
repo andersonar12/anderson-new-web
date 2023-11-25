@@ -87,7 +87,11 @@ export const skills: Skill[] = [
         title: 'Node.js',
         img: 'assets/img/skills/node.png',
     },
+    {
+        title: 'Vite',
+        img: 'assets/img/skills/vite.png',
 
+    },
     {
         title: 'HTML',
         img: 'assets/img/skills/html.png',

@@ -133,68 +133,47 @@ export function Home() {
 
             <div className="row no-gutters">
               <div
-                className="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init"
+                className="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init"
                 data-aos="fade-up"
               >
                 <div className="count-box">
                   <i className="bi bi-emoji-smile"></i>
-                  <span
-                    data-purecounter-start="0"
-                    data-purecounter-end="232"
-                    data-purecounter-duration="0"
-                    className="purecounter"
-                  >
-                    232
-                  </span>
+                  <span>+20</span>
                   <p>
-                    <strong>Happy Clients</strong> consequuntur quae
+                    <strong>Happy Clients</strong> and satisfied with the work done
                   </p>
                 </div>
               </div>
 
               <div
-                className="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init"
+                className="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
                 <div className="count-box">
                   <i className="bi bi-journal-richtext"></i>
-                  <span
-                    data-purecounter-start="0"
-                    data-purecounter-end="521"
-                    data-purecounter-duration="0"
-                    className="purecounter"
-                  >
-                    521
-                  </span>
+                  <span>+30</span>
                   <p>
-                    <strong>Projects</strong> adipisci atque cum quia aut
+                    <strong>Projects</strong> successfully completed
                   </p>
                 </div>
               </div>
 
               <div
-                className="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init"
+                className="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init"
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
                 <div className="count-box">
                   <i className="bi bi-headset"></i>
-                  <span
-                    data-purecounter-start="0"
-                    data-purecounter-end="1453"
-                    data-purecounter-duration="0"
-                    className="purecounter"
-                  >
-                    1453
-                  </span>
+                  <span>Full</span>
                   <p>
-                    <strong>Hours Of Support</strong> aut commodi quaerat
+                    <strong>Hours Of Support</strong> and availability
                   </p>
                 </div>
               </div>
 
-              <div
+              {/* <div
                 className="col-lg-3 col-md-6 d-md-flex align-items-md-stretch aos-init"
                 data-aos="fade-up"
                 data-aos-delay="300"
@@ -213,7 +192,7 @@ export function Home() {
                     <strong>Hard Workers</strong> rerum asperiores dolor
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
@@ -232,7 +211,7 @@ export function Home() {
                 {skills.map((skill, index) => (
                   <div
                     key={index}
-                    className="col-4 col-md-3 col-lg-1 aos-init hvr-pop"
+                    className="col-4 col-md-3 col-lg-2 aos-init hvr-pop"
                     data-aos="zoom-in-left"
                     data-aos-delay={index * 15}
                   >
