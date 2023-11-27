@@ -1,47 +1,15 @@
 import { useEffect } from "react";
 
-import Typed from "typed.js";
-import AOS from "aos";
 import "aos/dist/aos.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 import { skills, itemsAbout } from "../data/data";
-
-let typeInited = null as Typed | null;
+import { AnimatedTyping } from "../components/AnimatedTyping";
+import { Portfolio } from "../components/Portfolio";
 
 export function Home() {
-  useEffect(() => {
-    //AOS Animation
-    AOS.init({
-      startEvent: "DOMContentLoaded", // name of the event dispatched on the document, that AOS should initialize on
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-      mirror: false,
-    });
-
-    const initTyped = () => {
-      const element = document.querySelector(".typed");
-      if (element) {
-        typeInited = new Typed(element, {
-          strings: ["Web Developer", "Systems Engineer", "Frontend Developer", "Freelancer"],
-          loop: true,
-          typeSpeed: 100,
-          backSpeed: 50,
-          backDelay: 2000,
-        });
-      }
-    };
-
-    if (!typeInited) {
-      initTyped();
-    }
-
-    // return () => {
-    //   typeInited!.destroy();
-    // };
-  }, []);
+  useEffect(() => {}, []);
 
   const toggleMenu = () => {
     let body = document.querySelector("body");
@@ -60,7 +28,7 @@ export function Home() {
           <h1>Anderson Romero</h1>
           <p>
             I'm
-            <span className="typed ms-2"></span>
+            <AnimatedTyping />
           </p>
         </div>
       </section>
@@ -81,7 +49,7 @@ export function Home() {
 
             <div className="row">
               <div className="col-lg-4 aos-init" data-aos="fade-right">
-                <img src="assets/img/anderson-profile.png" className="img-fluid" alt="" />
+                <img src="assets/img/anderson-profile.png" className="img-fluid animated-hover" />
               </div>
               <div className="col-lg-8 pt-4 pt-lg-0 content aos-init" data-aos="fade-left">
                 <h3>Systems Engineer &amp; Web Developer </h3>
@@ -133,7 +101,7 @@ export function Home() {
 
             <div className="row no-gutters">
               <div
-                className="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init"
+                className="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init hvr-underline-from-left"
                 data-aos="fade-up"
               >
                 <div className="count-box">
@@ -146,7 +114,7 @@ export function Home() {
               </div>
 
               <div
-                className="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init"
+                className="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init hvr-underline-from-left"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
@@ -160,7 +128,7 @@ export function Home() {
               </div>
 
               <div
-                className="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init"
+                className="col-lg-4 col-md-6 d-md-flex align-items-md-stretch aos-init hvr-underline-from-left"
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
@@ -199,7 +167,6 @@ export function Home() {
         {/* <!-- End Facts Section --> */}
 
         {/* <!-- ======= Skills Section ======= --> */}
-
         <section id="skills" className="skills section-bg">
           <div className="container">
             <div className="section-title">
@@ -226,6 +193,11 @@ export function Home() {
           </div>
         </section>
         {/* <!-- End Skills Section --> */}
+
+        {/* <!-- ======= Portfolio Section ======= --> */}
+
+        <Portfolio />
+        {/* <!-- End Portfolio Section --> */}
       </main>
     </div>
   );

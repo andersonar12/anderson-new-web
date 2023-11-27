@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { Footer } from "./Footer";
 import { useEffect } from "react";
+import { ToggleMenu } from "./ToggleMenu";
+import { activeNavbarLinks } from "./activeNavbarLinks";
 
 const navLinks = [
   {
@@ -49,37 +51,12 @@ const navLinks = [
 
 export const Header = () => {
   useEffect(() => {
-    let navbarlinks = document.querySelectorAll(
-      "#navbar .scrollto"
-    ) as NodeListOf<HTMLAnchorElement>;
-    const navbarlinksActive = () => {
-      let position = window.scrollY + 200;
-      navbarlinks.forEach((navbarlink) => {
-        if (!navbarlink.hash) return;
-        let section = document.querySelector(navbarlink.hash) as HTMLAnchorElement;
-        if (!section) return;
-        if (position >= section.offsetTop && position <= section.offsetTop + section.offsetHeight) {
-          navbarlink.classList.add("active");
-        } else {
-          navbarlink.classList.remove("active");
-        }
-      });
-    };
-    window.addEventListener("load", navbarlinksActive);
-    document.addEventListener("scroll", navbarlinksActive);
+    activeNavbarLinks();
   }, []);
-
-  const toggleMenu = () => {
-    document.querySelector("body")!.classList.toggle("mobile-nav-active");
-    const navToggle = document.querySelector(".mobile-nav-toggle")!;
-    navToggle.classList.toggle("bi-list");
-    navToggle.classList.toggle("bi-x");
-  };
 
   return (
     <>
-      {/* <!-- ======= Mobile nav toggle button ======= --> */}
-      <i className="bi bi-list mobile-nav-toggle d-xl-none" onClick={toggleMenu}></i>
+      <ToggleMenu />
 
       {/* <!-- ======= Left Sidebar ======= --> */}
       <header id="header" className="d-flex flex-column">
