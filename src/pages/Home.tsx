@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-
+import { FormEvent, useEffect } from "react";
 import "aos/dist/aos.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
@@ -21,10 +20,28 @@ export function Home() {
     }
   };
 
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
+
+    const form = event.target as any;
+    console.log({
+      [`${form[0].name}`]: form[0].value,
+      [`${form[1].name}`]: form[1].value,
+      [`${form[2].name}`]: form[2].value,
+      [`${form[3].name}`]: form[3].value,
+    });
+  };
+
   return (
-    <div id="home" onClick={() => toggleMenu()}>
+    <div
+      id="home"
+      onClick={() => toggleMenu()}
+      data-aos-easing="ease-in-out-back"
+      data-aos-duration="1000"
+      data-aos-delay="0"
+    >
       <section id="hero" className="d-flex flex-column justify-content-center align-items-center">
-        <div className="hero-container aos-init aos-animate" data-aos="fade-in">
+        <div className="hero-container" data-aos="fade-in">
           <h1>Anderson Romero</h1>
           <p>
             I'm
@@ -195,9 +212,190 @@ export function Home() {
         {/* <!-- End Skills Section --> */}
 
         {/* <!-- ======= Portfolio Section ======= --> */}
-
         <Portfolio />
         {/* <!-- End Portfolio Section --> */}
+
+        {/* <!-- ======= Services Section ======= --> */}
+        <section id="services" className="services section-bg">
+          <div className="container">
+            <div className="section-title">
+              <h2>Services</h2>
+              <p>
+                Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum
+                quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui
+                impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.
+              </p>
+            </div>
+
+            <div className="row">
+              <div className="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+                <div className="icon">
+                  <i className="bi bi-briefcase"></i>
+                </div>
+                <h4 className="title">
+                  <a href="">Lorem Ipsum</a>
+                </h4>
+                <p className="description">
+                  Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+                  occaecati cupiditate non provident
+                </p>
+              </div>
+              <div className="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                <div className="icon">
+                  <i className="bi bi-card-checklist"></i>
+                </div>
+                <h4 className="title">
+                  <a href="">Dolor Sitema</a>
+                </h4>
+                <p className="description">
+                  Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                  commodo consequat tarad limino ata
+                </p>
+              </div>
+              <div className="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                <div className="icon">
+                  <i className="bi bi-bar-chart"></i>
+                </div>
+                <h4 className="title">
+                  <a href="">Sed ut perspiciatis</a>
+                </h4>
+                <p className="description">
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                  fugiat nulla pariatur
+                </p>
+              </div>
+              <div className="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                <div className="icon">
+                  <i className="bi bi-binoculars"></i>
+                </div>
+                <h4 className="title">
+                  <a href="">Magni Dolores</a>
+                </h4>
+                <p className="description">
+                  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                  mollit anim id est laborum
+                </p>
+              </div>
+              <div className="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+                <div className="icon">
+                  <i className="bi bi-brightness-high"></i>
+                </div>
+                <h4 className="title">
+                  <a href="">Nemo Enim</a>
+                </h4>
+                <p className="description">
+                  At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                  praesentium voluptatum deleniti atque
+                </p>
+              </div>
+              <div className="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
+                <div className="icon">
+                  <i className="bi bi-calendar4-week"></i>
+                </div>
+                <h4 className="title">
+                  <a href="">Eiusmod Tempor</a>
+                </h4>
+                <p className="description">
+                  Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum
+                  soluta nobis est eligendi
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* <!-- End Services Section --> */}
+
+        {/* <!-- ======= Contact Section ======= --> */}
+        <section id="contact" className="contact">
+          <div className="container">
+            <div className="section-title">
+              <h2>Contact</h2>
+              <p>
+                If you have any questions or would like to discuss a possible collaboration, feel
+                free to contact me.
+              </p>
+            </div>
+
+            <div className="row" data-aos="fade-in">
+              <div className="col-lg-5 d-flex align-items-stretch">
+                <div className="info">
+                  <div className="address">
+                    <i className="bi bi-geo-alt"></i>
+                    <h4>Location:</h4>
+                    <p>A108 Adam Street, New York, NY 535022</p>
+                  </div>
+
+                  <div className="email">
+                    <i className="bi bi-envelope"></i>
+                    <h4>Email:</h4>
+                    <p>info@example.com</p>
+                  </div>
+
+                  <div className="phone">
+                    <i className="bi bi-phone"></i>
+                    <h4>Call:</h4>
+                    <p>+1 5589 55488 55s</p>
+                  </div>
+
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.908130672264!2d-71.403850685204!3d10.388470992608891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e8a2a377a3a3a61%3A0x4e0d3a8a1a6a5a81!2sCabimas%2C+Zulia%2C+Venezuela!5e0!3m2!1sen!2sbg!4v1639943755621"
+                    frameBorder="0"
+                    style={{ border: 0, width: "100%", height: "290px" }}
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
+
+              <div className="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+                <form
+                  // action="forms/contact.php"
+                  className="email-form"
+                  onSubmit={handleSubmit}
+                >
+                  <div className="row">
+                    <div className="form-group col-md-6">
+                      <label htmlFor="name">Your Name</label>
+                      <input type="text" name="name" className="form-control" id="name" required />
+                    </div>
+                    <div className="form-group col-md-6">
+                      <label htmlFor="name">Your Email</label>
+                      <input
+                        type="email"
+                        className="form-control"
+                        name="email"
+                        id="email"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="name">Subject</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      name="subject"
+                      id="subject"
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="name">Message</label>
+                    <textarea className="form-control" name="message" rows={10} required></textarea>
+                  </div>
+                  <div className="my-3">
+                    <div className="loading">Loading</div>
+                    <div className="error-message"></div>
+                    <div className="sent-message">Your message has been sent. Thank you!</div>
+                  </div>
+                  <div className="text-center">
+                    <button type="submit">Send Message</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* <!-- End Contact Section --> */}
       </main>
     </div>
   );

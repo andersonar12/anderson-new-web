@@ -3,13 +3,13 @@ import { useEffect } from "react";
 //@ts-ignore
 import GLightbox from "glightbox";
 import { projects } from "../data/data";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Portfolio = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    let portfolioLightbox = GLightbox({
+    GLightbox({
       selector: ".portfolio-lightbox",
     });
   }, []);
@@ -27,12 +27,16 @@ export const Portfolio = () => {
   return (
     <section id="portfolio" className="portfolio">
       <div className="container">
-        <div className="section-title">
+        <div className="section-title ">
           <h2>Portfolio</h2>
           <p>
-            Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum
-            quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui
-            impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.
+            This portfolio is a testament to my experience and skills in the use of modern front-end
+            technologies. Each project presented here demonstrates my ability to create intuitive
+            and engaging user interfaces, optimized for excellent user experience and superior
+            performance. From corporate websites to interactive web applications, each project is a
+            reflection of my commitment to quality, attention to detail and passion for excellence
+            in web design and development. I invite you to explore each of these projects to get a
+            deeper insight into my skills and competencies.
           </p>
         </div>
 
@@ -55,7 +59,7 @@ export const Portfolio = () => {
               key={index}
               className={`col-lg-4 col-md-6  portfolio-item hvr-grow `} //filter-${item.type}
             >
-              <div className="portfolio-wrap card" style={{ height: 300 }}>
+              <div className="portfolio-wrap card hvr-overline-from-center" style={{ height: 300 }}>
                 <div className="d-flex align-items-center h-100 ">
                   <img src={item.images[0]} className="img-fluid" alt="" height={300} />
                 </div>
@@ -63,12 +67,12 @@ export const Portfolio = () => {
                   <a
                     href={item.images[0]}
                     id={"portfolio-lightbox" + index}
-                    className="portfolio-lightbox"
+                    className="portfolio-lightbox fs-4"
                     title={item.title}
                   >
                     <i className="bx bi-zoom-in"></i> Zoom In
                   </a>
-                  <a onClick={() => navigate(`/details/?id=${index}`)}>
+                  <a onClick={() => navigate(`/details/?id=${index}`)} className="fs-4">
                     <i className="bx bi-info-square-fill"></i> Details
                   </a>
                 </div>

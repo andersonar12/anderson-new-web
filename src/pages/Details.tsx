@@ -1,79 +1,77 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import Swiper from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper/modules";
+// Import Swiper styles
 import "swiper/css";
+import { projects } from "../data/data";
 
 export const Details = () => {
+  const [slides, setSlides] = useState([] as string[]);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
   useEffect(() => {
     let params = new URL(document.location as unknown as string).searchParams;
-
     let id = params.get("id");
-
     console.log(id);
 
-    // Portfolio Details Slider
-    let swiper = new Swiper(".swiper", {
-      speed: 400,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        type: "bullets",
-        clickable: true,
-      },
-    });
+    if (id) {
+      const project = projects[+id];
+      setTitle(project.title);
+      setDescription(project.description);
+      setSlides(project.images);
+    }
   }, []);
 
   return (
-    <>
-      <section id="breadcrumbs" className="breadcrumbs">
+    <div id="main">
+      <section id="breadcrumbs" className="breadcrumbs aos-init" data-aos="fade-right">
         <div className="container">
           <div className="d-flex justify-content-between align-items-center">
-            <h2>Portfoio Details</h2>
+            <h2>Project Details</h2>
             <ol>
               <li>
                 <Link to="/">Home</Link>
               </li>
-              <li>Portfoio Details</li>
+              <li>Project Details</li>
             </ol>
           </div>
         </div>
       </section>
 
       {/* <!-- ======= Portfolio Details Section ======= --> */}
-      <section id="portfolio-details" className="portfolio-details">
+      <section id="portfolio-details" className="portfolio-details aos-init" data-aos="fade-up">
         <div className="container">
           <div className="row gy-4">
             <div className="col-lg-8">
-              <div className="portfolio-details-slider swiper">
-                <div className="swiper-wrapper align-items-center">
-                  <div className="swiper-slide">
-                    <img src={"../assets/img/portfolio/portfolio-details-1.jpg"} alt="" />
-                  </div>
-
-                  <div className="swiper-slide">
-                    <img src={"../assets/img/portfolio/portfolio-details-1.jpg"} alt="" />
-                  </div>
-
-                  <div className="swiper-slide">
-                    <img src={"../assets/img/portfolio/portfolio-details-1.jpg"} alt="" />
-                  </div>
-                </div>
-                <div className="swiper-pagination"></div>
-
-                <div className="swiper-button-prev"></div>
-                <div className="swiper-button-next"></div>
-              </div>
+              {slides.length > 0 && (
+                <Swiper
+                  autoHeight={true}
+                  slidesPerView={1}
+                  spaceBetween={30}
+                  loop={true}
+                  pagination={{
+                    clickable: true,
+                  }}
+                  navigation={true}
+                  modules={[Pagination, Navigation]}
+                  className="mySwiper"
+                >
+                  {slides.map((slide, index) => (
+                    <SwiperSlide key={index}>
+                      <img src={"/" + slide} className="img-fluid" />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              )}
             </div>
 
             <div className="col-lg-4">
               <div className="portfolio-info">
-                <h3>Project information</h3>
-                <ul>
+                <h2>{title}</h2>
+                <p>{description}</p>
+                {/* <ul>
                   <li>
                     <strong>Category</strong>: Web design
                   </li>
@@ -86,22 +84,17 @@ export const Details = () => {
                   <li>
                     <strong>Project URL</strong>: <a href="#">www.example.com</a>
                   </li>
-                </ul>
+                </ul> */}
               </div>
-              <div className="portfolio-description">
-                <h2>This is an example of portfolio detail</h2>
-                <p>
-                  Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore
-                  commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non
-                  officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis
-                  tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-                </p>
-              </div>
+              {/* <div className="portfolio-description">
+                <h2>{title}</h2>
+                <p>{description}</p>
+              </div> */}
             </div>
           </div>
         </div>
       </section>
       {/* <!-- End Portfolio Details Section --> */}
-    </>
+    </div>
   );
 };
