@@ -57,7 +57,7 @@ export const Portfolio = () => {
           {projects.map((item, index) => (
             <div
               key={index}
-              className={`col-lg-4 col-md-6  portfolio-item hvr-grow `} //filter-${item.type}
+              className={`col-lg-4 col-md-6  portfolio-item hvr-grow`} //filter-${item.type}
             >
               <div className="portfolio-wrap card hvr-overline-from-center" style={{ height: 300 }}>
                 <div className="d-flex align-items-center h-100 ">

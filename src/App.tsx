@@ -1,8 +1,9 @@
-import { Routes, Route, Outlet } from "react-router-dom";
+import { Routes, Route, Outlet, useNavigate } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Details } from "./pages/Details";
 import { Header } from "./components/Header";
 import { BackToTop } from "./components/BackToTop";
+import { useEffect } from "react";
 export default function App() {
   return (
     <div>
@@ -18,6 +19,11 @@ export default function App() {
 }
 
 function Layout() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate("/");
+  }, []);
   return (
     <div>
       <Header />
