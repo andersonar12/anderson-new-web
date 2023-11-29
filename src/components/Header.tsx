@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Footer } from "./Footer";
 import { useEffect } from "react";
 import { ToggleMenu } from "./ToggleMenu";
@@ -50,7 +50,7 @@ const navLinks = [
 ];
 
 export const Header = () => {
-  const location = useLocation();
+  // const location = useLocation();
 
   const navigate = useNavigate();
 
