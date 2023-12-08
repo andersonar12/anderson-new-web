@@ -124,6 +124,44 @@ export const skills: Skill[] = [
 export const projects = [
     {
         images: [
+            "assets/img/projects/form-slothmove/1.png",
+            "assets/img/projects/form-slothmove/2.png",
+            "assets/img/projects/form-slothmove/3.png",
+            "assets/img/projects/form-slothmove/4.png",
+            "assets/img/projects/form-slothmove/5.png",
+            "assets/img/projects/form-slothmove/6.png",
+            "assets/img/projects/form-slothmove/7.png",
+            "assets/img/projects/form-slothmove/8.png",
+            "assets/img/projects/form-slothmove/9.png",
+            "assets/img/projects/form-slothmove/10.png",
+            "assets/img/projects/form-slothmove/11.png",
+            "assets/img/projects/form-slothmove/12.png",
+            "assets/img/projects/form-slothmove/13.png",
+            "assets/img/projects/form-slothmove/14.png",
+            "assets/img/projects/form-slothmove/15.png",
+        ],
+        title: "Form - SlothMove  (Vue.js)",
+        description:
+            "This application allows users to access an address update service, you can select who you want to inform and the company will update it for you. With SlothMove, you can update your address with: NHS, DVLA,HRMC,Electoral Roll, Student Loans, Banks, Loyalty cards, Charities, Premium Bonds (NS&I), Pensions, Gyms, Mobile, Dentist, TV Licence, Energy providers, Water & sewerage, Break down providers, Home care, Opticians, Pets",
+        url: "",
+    },
+    {
+        images: [
+            "assets/img/projects/dashboard-slothmove/1.png",
+            "assets/img/projects/dashboard-slothmove/2.png",
+            "assets/img/projects/dashboard-slothmove/3.png",
+            "assets/img/projects/dashboard-slothmove/4.png",
+            "assets/img/projects/dashboard-slothmove/5.png",
+            "assets/img/projects/dashboard-slothmove/6.png",
+            "assets/img/projects/dashboard-slothmove/7.png",
+        ],
+        title: "Dashboard - SlothMove  (Vue.js)",
+        description:
+            "This web application allows users to see the progress of their information update request in detail and in real time, with good customer support and timely notifications of any issues.",
+        url: "",
+    },
+    {
+        images: [
             "assets/img/projects/backoffice-tandem/1.png",
             "assets/img/projects/backoffice-tandem/2.png",
             "assets/img/projects/backoffice-tandem/3.png",
