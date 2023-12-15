@@ -43,7 +43,7 @@ export const Details = () => {
     console.log(gallery);
     if (gallery == undefined) {
       gallery = GLightbox({
-        elements: project.images.map((image, index) => ({
+        elements: project.images.map((image: string) => ({
           href: "/" + image,
           type: "image",
         })),
