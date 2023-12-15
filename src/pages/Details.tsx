@@ -5,25 +5,52 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
+
+//@ts-ignore
+import GLightbox from "glightbox";
 import { projects } from "../data/data";
+
+// interface Project {
+//   image: string;
+//   title: string;
+//   description: string;
+//   [Symbol.iterator](): Iterator<any>;
+// }
+
+let project: any;
 
 export const Details = () => {
   const [slides, setSlides] = useState([] as string[]);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+
+  let gallery: any;
+
   useEffect(() => {
     let params = new URL(document.location as unknown as string).searchParams;
     let id = params.get("id");
     console.log(id);
 
     if (id) {
-      const project = projects[+id];
+      project = projects[+id];
       setTitle(project.title);
       setDescription(project.description);
       setSlides(project.images);
     }
   }, []);
 
+  const openGallery = (index: number) => {
+    console.log(gallery);
+    if (gallery == undefined) {
+      gallery = GLightbox({
+        elements: project.images.map((image, index) => ({
+          href: "/" + image,
+          type: "image",
+        })),
+      });
+    }
+    gallery.openAt(index);
+  };
   return (
     <div id="main">
       <section id="breadcrumbs" className="breadcrumbs aos-init" data-aos="fade-right">
@@ -60,7 +87,20 @@ export const Details = () => {
                 >
                   {slides.map((slide, index) => (
                     <SwiperSlide key={index}>
-                      <img src={"/" + slide} className="img-fluid" />
+                      {/* <a
+                        href={"/" + slide}
+                        id={"slide-images" + index}
+                        data-height="auto"
+                        className="slide-images"
+                      >
+                        <img src={"/" + slide} className="img-fluid" />
+                      </a> */}
+                      <img
+                        onClick={() => openGallery(index)}
+                        src={"/" + slide}
+                        className="img-fluid"
+                        style={{ cursor: "pointer" }}
+                      />
                     </SwiperSlide>
                   ))}
                 </Swiper>
