@@ -506,15 +506,25 @@ iframe.wait-autoplay {
 
 .glightbox-clean .gdesc-inner {
   padding: 22px 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .glightbox-clean .gslide-title {
-  font-size: 1em;
-  font-weight: normal;
-  font-family: arial;
-  color: #000;
-  margin-bottom: 19px;
-  line-height: 1.4em;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Raleway", sans-serif!important;
+  color: #ffffff;
+  margin-bottom: 0;
+  text-align: center;
+  background-color: #2c303f;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 30px;
+  box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
 }
 
 .glightbox-clean .gslide-desc {

@@ -210,6 +210,24 @@ export const projects = [
     },
     {
         images: [
+            "assets/img/projects/sloth-admin-console/1.png",
+            "assets/img/projects/sloth-admin-console/2.png",
+            "assets/img/projects/sloth-admin-console/3.png",
+            "assets/img/projects/sloth-admin-console/4.png",
+            "assets/img/projects/sloth-admin-console/5.png",
+            "assets/img/projects/sloth-admin-console/6.png",
+            "assets/img/projects/sloth-admin-console/7.png",
+            "assets/img/projects/sloth-admin-console/8.png",
+            "assets/img/projects/sloth-admin-console/9.png",
+            "assets/img/projects/sloth-admin-console/10.png",
+        ],
+        title: "Sloth Admin Console (Vue.js)",
+        description:
+            "Administrative panel with functionalities ranging from move management, editing of move details, user tracking, user and move reports, partials, template upload for marketing campaign mailings. Also the admin allows you to generate master passwords for user accounts access to the dashboard.",
+        url: "",
+    },
+    {
+        images: [
             "assets/img/projects/landing-pullman-bus/1.png",
             "assets/img/projects/landing-pullman-bus/2.png",
             "assets/img/projects/landing-pullman-bus/3.png",
