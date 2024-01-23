@@ -18,7 +18,7 @@ const calculateAge = (birthdate: string) => {
 export const itemsAbout = [
     {
         title: "Age",
-        value: calculateAge("1995-06-01"),
+        value: calculateAge("1995-01-06"),
     },
     {
         title: "Degree",
@@ -266,6 +266,18 @@ export const projects = [
     },
     {
         images: [
+            "assets/img/projects/dashboard-las-condes/1.jpeg",
+            "assets/img/projects/dashboard-las-condes/2.jpeg",
+            "assets/img/projects/dashboard-las-condes/3.jpeg",
+            "assets/img/projects/dashboard-las-condes/4.jpeg",
+        ],
+        title: "Dashboard Las Condes (Angular)",
+        description:
+            "Dashboard Las Condes, monitoring platform for bus routes and bus capacity (passenger boarding and alighting by geozone), made with Angular, Angular Maps (Google Maps native library for the framework), Angular Material Components, Bootstrap for the column system, it is integrated with a REST API backend made in Elixir - Phoenix",
+        url: "",
+    },
+    {
+        images: [
             "assets/img/projects/landing-busnack/1.png",
             "assets/img/projects/landing-busnack/2.png",
             "assets/img/projects/landing-busnack/3.png",
@@ -332,6 +344,33 @@ export const projects = [
             "Page made in HTML, CSS and Vanila Javascript, fully responsive, with CMS integration.",
         url: "",
     },
+    {
+        images: [
+            "assets/img/projects/pokemon-static/1.png",
+            "assets/img/projects/pokemon-static/2.png",
+            "assets/img/projects/pokemon-static/3.png",
+            "assets/img/projects/pokemon-static/4.png",
+            "assets/img/projects/pokemon-static/5.png",
+            "assets/img/projects/pokemon-static/6.png",
+        ],
+        title: "Pokemon Static (Next.js)",
+        description:
+            "A practical application, the POKEMON API is consulted and the pokemon are reenderized, it can be consulted individually and has a Favorites section.",
+        url: "",
+    },
+    {
+        images: [
+            "assets/img/projects/open-jira/1.png",
+            "assets/img/projects/open-jira/2.png",
+            "assets/img/projects/open-jira/3.png",
+            "assets/img/projects/open-jira/4.png",
+        ],
+        title: "Open Jira (Next.js)",
+        description:
+            "Practical application in order to create a Jira clone application of tasks and to be able to drag and drop. Technologies used: Next.js, Material UI, Tailwind, MongoDB, mongoose, Docker.",
+        url: "",
+    }
+    ,
     {
         images: [
             "assets/img/projects/la-pizzeria/1.jpg",
@@ -409,31 +448,36 @@ export const services = [
     {
         icon: "bi bi-pc-display-horizontal",
         title: "Responsive Design",
-        description: "I create websites that look and function great on any device, from desktop computers to smartphones.",
+        description:
+            "I create websites that look and function great on any device, from desktop computers to smartphones.",
         delay: "",
     },
     {
         icon: "bi bi-universal-access-circle",
         title: "Web Accessibility",
-        description: "I design websites that are accessible to everyone, including those with visual, hearing and motor disabilities.",
+        description:
+            "I design websites that are accessible to everyone, including those with visual, hearing and motor disabilities.",
         delay: "100",
     },
     {
         icon: "bi bi-person-video2",
         title: "User Interface Design",
-        description: "I create attractive and easy-to-use user interfaces that align with your brand identity.",
+        description:
+            "I create attractive and easy-to-use user interfaces that align with your brand identity.",
         delay: "200",
     },
     {
         icon: "bi bi-pip",
         title: "Prototyping and Wireframing",
-        description: "I help visualize the structure and design of your website before development begins.",
+        description:
+            "I help visualize the structure and design of your website before development begins.",
         delay: "300",
     },
     {
         icon: "bi bi-database-fill-gear",
         title: "Back-End Integration",
-        description: "I work closely with back-end developers to ensure seamless integration of server-side functionality.",
+        description:
+            "I work closely with back-end developers to ensure seamless integration of server-side functionality.",
         delay: "400",
     },
     {
