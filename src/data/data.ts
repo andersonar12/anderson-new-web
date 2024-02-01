@@ -179,6 +179,45 @@ export const projects = [
     },
     {
         images: [
+            "assets/img/projects/preform-slothmove/1.png",
+            "assets/img/projects/preform-slothmove/2.png",
+            "assets/img/projects/preform-slothmove/3.png",
+            "assets/img/projects/preform-slothmove/4.png",
+        ],
+        title: "Preform Slothmove (React.js)",
+        description:
+            "Preform developed for Slothmove's home page, allows the user visiting the home page to pre-fill their data to be redirected to the form with full functionality.",
+        url: "",
+    },
+    {
+        images: [
+            "assets/img/projects/digital-waiter-landing/1.png",
+            "assets/img/projects/digital-waiter-landing/2.png",
+            "assets/img/projects/digital-waiter-landing/3.png",
+            "assets/img/projects/digital-waiter-landing/4.png",
+            "assets/img/projects/digital-waiter-landing/5.png",
+        ],
+        title: "Digital Waiter Landing (React.js)",
+        description:
+            "A Landing to promote the Digital Waiter application, a platform that allows automatic attention to the public in restaurants, optimizing processes and reducing waiting times, allowing an improvement in the management of your resources.The platform offers live information of orders, sales reports and customer database, without the installation of a software.",
+        url: "",
+    },
+    {
+        images: [
+            "assets/img/projects/web-page-tandem/1.png",
+            "assets/img/projects/web-page-tandem/2.png",
+            "assets/img/projects/web-page-tandem/3.png",
+            "assets/img/projects/web-page-tandem/4.png",
+            "assets/img/projects/web-page-tandem/5.png",
+            "assets/img/projects/web-page-tandem/6.png",
+        ],
+        title: "TANDEM Web Page (React.js)",
+        description:
+            "Website created to show the services and information about the company TANDEM Industrial, fully responsive, with CMS integration.",
+        url: "",
+    },
+    {
+        images: [
             "assets/img/projects/cms-tandem/1.png",
             "assets/img/projects/cms-tandem/2.png",
             "assets/img/projects/cms-tandem/3.png",
@@ -239,31 +278,7 @@ export const projects = [
             "Landing to promote the benefits of the Pullman Bus company with the applications (Go Movie - Live GPS) and to request affiliation to it.",
         url: "",
     },
-    {
-        images: [
-            "assets/img/projects/preform-slothmove/1.png",
-            "assets/img/projects/preform-slothmove/2.png",
-            "assets/img/projects/preform-slothmove/3.png",
-            "assets/img/projects/preform-slothmove/4.png",
-        ],
-        title: "Preform Slothmove (React.js)",
-        description:
-            "Preform developed for Slothmove's home page, allows the user visiting the home page to pre-fill their data to be redirected to the form with full functionality.",
-        url: "",
-    },
-    {
-        images: [
-            "assets/img/projects/digital-waiter-landing/1.png",
-            "assets/img/projects/digital-waiter-landing/2.png",
-            "assets/img/projects/digital-waiter-landing/3.png",
-            "assets/img/projects/digital-waiter-landing/4.png",
-            "assets/img/projects/digital-waiter-landing/5.png",
-        ],
-        title: "Digital Waiter Landing (HTML - CSS3 - JS)",
-        description:
-            "A Landing to promote the Digital Waiter application, a platform that allows automatic attention to the public in restaurants, optimizing processes and reducing waiting times, allowing an improvement in the management of your resources.The platform offers live information of orders, sales reports and customer database, without the installation of a software.",
-        url: "",
-    },
+
     {
         images: [
             "assets/img/projects/dashboard-las-condes/1.jpeg",
@@ -330,20 +345,7 @@ export const projects = [
         description: "Website made in HTML, CSS and Vanila Javascript, fully responsive.",
         url: "",
     },
-    {
-        images: [
-            "assets/img/projects/web-page-tandem/1.png",
-            "assets/img/projects/web-page-tandem/2.png",
-            "assets/img/projects/web-page-tandem/3.png",
-            "assets/img/projects/web-page-tandem/4.png",
-            "assets/img/projects/web-page-tandem/5.png",
-            "assets/img/projects/web-page-tandem/6.png",
-        ],
-        title: "TANDEM Web Page (HTML, CSS, Javascript)",
-        description:
-            "Page made in HTML, CSS and Vanila Javascript, fully responsive, with CMS integration.",
-        url: "",
-    },
+
     {
         images: [
             "assets/img/projects/pokemon-static/1.png",
