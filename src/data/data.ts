@@ -256,6 +256,14 @@ export const projects = [
   },
 
   {
+    images: Array.from({ length: 6 }, (_, i) => `assets/img/projects/list-race/${i + 1}.png`),
+    title: "List Race (Next.Js)",
+    description:
+      "A practical web application made with Next.js that allows us to promote marketing services to get the best places for vacations and travels, it has a blog, a section to show customer reviews and a mini gallery with some interesting images of interesting places.",
+    url: "",
+  },
+
+  {
     images: Array.from({ length: 4 }, (_, i) => `assets/img/projects/admin-todo/${i + 1}.png`),
     title: "Admin-Todo (Next.js)",
     description:
