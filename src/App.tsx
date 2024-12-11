@@ -4,6 +4,11 @@ import { Details } from "./pages/Details";
 import { Header } from "./components/Header";
 import { BackToTop } from "./components/BackToTop";
 import { useEffect } from "react";
+
+//Email.js Integration
+import emailjs from "@emailjs/browser";
+emailjs.init("S0ytma_OfXGJqGrLf");
+
 export default function App() {
   return (
     <div>
