@@ -142,5 +142,3 @@ export const Contact = () => {
     </section>
   );
 };
-
-// Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, optio laudantium. Dolorem quibusdam quidem dicta ea voluptatum aspernatur ipsum, at incidunt, vero doloremque maxime harum fugiat ipsa optio illum deleniti.
