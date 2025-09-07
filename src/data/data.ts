@@ -177,6 +177,20 @@ export const projects = [
     url: "",
   },
   {
+    images: Array.from({ length: 8 }, (_, i) => `assets/img/projects/cgi-financial-dashboard/${i + 1}.png`),
+    title: "CGI Financial Dashboard (Angular)",
+    description:
+      "A comprehensive web application built with Angular, designed to provide CGI Financial users with a centralized platform for managing financial products. The dashboard enables clients and agents to view and manage policies, schedule appointments, handle contacts, and utilize an interactive financial simulator for decision-making. This project showcases strong proficiency in front-end development with Angular, covering a wide range of skills from architecture and component creation to state management and interaction with external services, all delivered within a functional and aesthetically pleasing user interface.",
+    url: "",
+  },
+  {
+    images: Array.from({ length: 12 }, (_, i) => `assets/img/projects/cgi-financial-form/${i + 1}.png`),
+    title: "CGI - Financial Application Form (Angular)",
+    description:
+      "This project is a Single Page Application (SPA) developed with Angular, designed to digitize and streamline the application process for financial products. The application guides the user through a complex and dynamic multi-step form, ensuring accurate data collection and a smooth user experience. The development focused on refactoring a legacy form into a modern, modular, and scalable architecture, using reusable components for each step of the process.",  
+    url: "",
+  },
+  {
     images: Array.from({ length: 6 }, (_, i) => `assets/img/projects/cms-tandem/${i + 1}.png`),
     title: "CMS (Angular) for the Tandem website",
     description:
@@ -208,6 +222,26 @@ export const projects = [
     title: "Landing Pullman Bus(Angular - Ionic)",
     description:
       "Landing to promote the benefits of the Pullman Bus company with the applications (Go Movie - Live GPS) and to request affiliation to it.",
+    url: "",
+  },
+  {
+    images: Array.from(
+      { length: 7 },
+      (_, i) => `assets/img/projects/carbon-credits-widget/${i + 1}.png`
+    ),
+    title: "Carbon Credits Widget (Vue.js - WordPress)",
+    description:
+      "Development of a dynamic, self-contained front-end widget for the company's Forest Bank website (WordPress), designed to allow users to purchase or reserve carbon credits intuitively. The component displays a list of environmental projects and an interactive calculator that updates costs in real time. It was built using Vue.js for reactivity and Bootstrap 5 for a fully responsive design.",
+    url: "",
+  },
+  {
+    images: Array.from(
+      { length: 9 },
+      (_, i) => `assets/img/projects/artemisa-control-center/${i + 1}.png`
+    ),
+    title: "Artemisa Control Center (Next.js)",
+    description:
+      "Artemisa Control Center is a modern and reactive web application built with Next.js and TypeScript, designed to provide users with a centralized platform for data monitoring and management. The application features a secure token-based authentication system and a dashboard with multiple sections for visualizing critical information.This project showcases a robust front-end architecture with a focus on code reusability and maintainability.",
     url: "",
   },
   {
